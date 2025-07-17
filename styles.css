@@ -552,44 +552,46 @@ input[type="text"]:-ms-input-placeholder {
 
 /*logo*/
 .logo {
-  width: 168px;               /* 160 + 2×4px de “espacio” */
-  height: 168px;
+  /* Tamaño fijo para reservar el espacio */
+  width: 160px;
+  height: 160px;
+
+  /* Bordes redondeados y recorte de la imagen interna */
   border-radius: 50%;
   overflow: hidden;
-  padding: 4px;               /* para que drop-shadow quede dentro */
-  background: #000;           /* mismo fondo que tu wrapper */
+
+  /* Centrado del <img> */
   display: flex;
   align-items: center;
   justify-content: center;
-  filter:
-    drop-shadow(2px 0 0 white)
-    drop-shadow(-2px 0 0 white)
-    drop-shadow(0 2px 0 white)
-    drop-shadow(0 -2px 0 white);
+
+  /* Contorno blanco sin clipping */
+  box-shadow: 0 0 0 4px white;
 }
+
 .logo .icon {
+  /* Ajuste al 100% del contenedor */
   width: 100%;
   height: auto;
-  border-radius: 50%;
   display: block;
+
+  /* Garantizar que la imagen siga circular */
+  border-radius: 50%;
 }
 
 
-
+/* Tu overlay, sin cambios estructurales */
 #overlayImage {
   position: fixed;
-  top: 95%;            /* Ajusta la posición vertical (Y) */
-  left: 50%;           /* Ajusta la posición horizontal (X) */
+  top: 95%;                /* Ajusta la posición vertical (Y) */
+  left: 50%;               /* Ajusta la posición horizontal (X) */
   transform: translate(-50%, -50%); /* Centra el eje del ancho y alto */
-  width: 250px;        /* Tamaño en píxeles (podés cambiar a cualquier valor) */
-  height: auto;        /* Mantiene la proporción original */
-  opacity: 0.3;        /* Transparencia: 0 = invisible, 1 = totalmente opaco */
-  z-index: 9999;       /* Siempre por encima de todas las capas */
-    filter: grayscale(30%);   
+  width: 250px;            /* Tamaño en píxeles */
+  height: auto;            /* Mantiene la proporción original */
+  opacity: 0.3;            /* Transparencia: 0 = invisible, 1 = totalmente opaco */
+  z-index: 9999;           /* Siempre por encima de todas las capas */
+  filter: grayscale(30%);  /* Escala de grises */
 }
-
-
-
 
 
 
